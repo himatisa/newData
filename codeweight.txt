@@ -1,0 +1,15 @@
+gnuplot> reset
+gnuplot> set key off
+gnuplot> set border 3
+gnuplot> set boxwidth .05 absolute
+gnuplot> set style fill solid 1.0 noborder
+gnuplot> bin_width = 0.1;
+gnuplot> bin_number(x) = floor(x/bin_width)
+gnuplot> rounded(x) = bin_width * ( bin_number(x) + 0.5 )
+gnuplot> set datafile separator ","
+gnuplot> set ylabel "Weight of Players"
+gnuplot> plot 'combine.csv' using (rounded($9)):(9) smooth frequency with boxes
+gnuplot> set xlabel "weight of players"
+gnuplot> set ylabel "frequency"
+gnuplot> plot 'combine.csv' using (rounded($9)):(9) smooth frequency with boxes
+
