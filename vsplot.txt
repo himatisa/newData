@@ -1,0 +1,7 @@
+set datafile separator ","
+gnuplot> set xlabel "Weight of players"
+gnuplot> set ylabel "Fourty yard times of players"
+gnuplot> set title " Weight vs fourty yard times"
+gnuplot> plot 'combine.csv' using 9:12 
+gnuplot> set yrange [3:7]
+gnuplot> plot 'combine.csv' using 9:12
