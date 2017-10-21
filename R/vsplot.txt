@@ -1,0 +1,1 @@
+plot(y[,9],y[,12],main="Scatterplot, Weight vs Fourty times",xlab="Weight in lbs",ylab="time in s",col=blues9)
