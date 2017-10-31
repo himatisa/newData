@@ -1,13 +1,16 @@
+#remove key for better look
 set key off
- set boxwidth .05 absolute 
- set border 3
- set style fill solid 1.0 noborder
- bin_width = 0.1;
- bin_number(x) = floor(x/bin_width)
- rounded(x) = bin_width * ( bin_number(x) + 0.5 )
- set datafile separator ","
- plot 'combine.csv' using (rounded($12)):(12) smooth frequency with boxes
- set title "Fourty yard dash Distribution Frequency"
- set xlabel "Fourty yard dash times in seconds"
- set ylabel "number of nfl players "
- plot 'combine.csv' using (rounded($12)):(12) smooth frequency with boxes
+#normalize and set bar types
+set boxwidth .05 absolute 
+set border 3
+set style fill solid 1.0 noborder
+bin_width = 0.1;
+bin_number(x) = floor(x/bin_width)
+rounded(x) = bin_width * ( bin_number(x) + 0.5 )
+#read csv file 
+set datafile separator ","
+#get data and use column 12  
+set title "Fourty yard dash Distribution Frequency"
+set xlabel "Fourty yard dash times in seconds"
+set ylabel "number of nfl players "
+plot 'combine.csv' using (rounded($12)):(12) smooth frequency with boxes

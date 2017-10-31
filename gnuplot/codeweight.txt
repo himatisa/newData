@@ -1,15 +1,19 @@
- reset
- set key off
- set border 3
- set boxwidth .05 absolute
- set style fill solid 1.0 noborder
- bin_width = 0.1;
- bin_number(x) = floor(x/bin_width)
- rounded(x) = bin_width * ( bin_number(x) + 0.5 )
- set datafile separator ","
- set ylabel "Weight of Players"
- plot 'combine.csv' using (rounded($9)):(9) smooth frequency with boxes
- set xlabel "weight of players"
- set ylabel "frequency"
- plot 'combine.csv' using (rounded($9)):(9) smooth frequency with boxes
+#set for better visuals by changing version and setting key off and bartypes
+set term wxt enhanced
+reset
+set key off
+set border 3
+set boxwidth .05 absolute
+set style fill solid 1.0 noborder
+#normalize bars
+bin_width = 0.1;
+bin_number(x) = floor(x/bin_width)
+rounded(x) = bin_width * ( bin_number(x) + 0.5 )
+#set for csv file 
+set datafile separator ","
+set title "Weight of Players Histogram"
+set xlabel "weight of players"
+set ylabel "frequency"
+#plot column 9
+plot 'combine.csv' using (rounded($9)):(9) smooth frequency with boxes
 

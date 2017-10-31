@@ -1,7 +1,11 @@
+set term wxt enhanced
+set key off
+#set for csv file
 set datafile separator ","
- set xlabel "Weight of players"
- set ylabel "Fourty yard times of players"
- set title " Weight vs fourty yard times"
- plot 'combine.csv' using 9:12 
- set yrange [3:7]
- plot 'combine.csv' using 9:12
+set xlabel "Weight of players"
+set ylabel "Fourty yard times of players"
+set title " Weight vs fourty yard times"
+#plot column 9 vs column 12 in scatterplot 
+plot 'combine.csv' using 9:12 
+ 
+ 
